@@ -1,0 +1,16 @@
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowUpRight, Plus, X } from 'lucide-react';
+import { SectionLabel } from './SectionLabel';
+
+const faqs = [
+  ['What is Lorvane built to help me solve?', 'Research can quickly become scattered across papers, documents, notes, references, and internal knowledge. Lorvane gives you one structured environment to bring that information together, search across it, connect related findings, and keep the evidence behind your work within reach.'],
+  ['How does Lorvane fit into my existing research workflow?', 'You don\'t have to change the way you think about research. Lorvane supports the workflow you already follow — from collecting sources and creating research records to reviewing evidence, discovering related knowledge, and saving important findings.'],
+  ['Can I connect findings with the evidence behind them?', 'Yes. Lorvane is designed to keep findings connected to their supporting documents, references, and research context. This gives you a clearer way to understand where an insight came from and allows your team to revisit the evidence when needed.'],
+  ['How does Lorvane help me discover related knowledge?', 'Your most useful discovery may come from something you researched months ago. Lorvane helps you explore relationships between research records, topics, documents, references, and findings so you can uncover connections that might otherwise remain buried.'],
+  ['Is Lorvane suitable for enterprise R&D teams?', 'Yes. Lorvane is designed for research driven organizations that need shared knowledge, structured information, controlled access, activity visibility, and evidence traceability. Whether you\'re supporting a focused R&D group or a broader enterprise knowledge environment, the platform can provide a foundation for more organized research.'],
+  ['Can Lorvane grow with the knowledge we build?', 'That\'s one of the ideas at the heart of Lorvane. Your research shouldn\'t become less useful as it gets older. As you add records, sources, findings, and connections, your research environment can become a growing knowledge resource that your team can return to and build upon.'],
+];
+
+function FAQ() { const [active, setActive] = useState(0); return <section className="section faq" id="faq"><div className="container faq-grid"><div><SectionLabel>EXPLORE WITH CLARITY</SectionLabel><h2>Everything you need to know before bringing your research into <em>Lorvane.</em></h2><p>Still curious? Our team can help map the right research workflow for your organization.</p><a className="text-link" href="mailto:support@lorvane.net">Talk to our team <ArrowUpRight size={16} /></a></div><div className="faq-list">{faqs.map(([q, a], i) => <div className={`faq-item ${active === i ? 'active' : ''}`} key={q}><button onClick={() => setActive(active === i ? -1 : i)}><span>{q}</span>{active === i ? <X size={18} /> : <Plus size={18} />}</button><AnimatePresence>{active === i && <motion.p initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }}>{a}</motion.p>}</AnimatePresence></div>)}</div></div></section>; }
+export { FAQ };

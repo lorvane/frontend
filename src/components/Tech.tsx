@@ -1,0 +1,5 @@
+import { ArrowUpRight } from 'lucide-react';
+import { SectionLabel } from './SectionLabel';
+
+function Tech() { return <section className="section tech"><div className="container"><div className="tech-head"><div><SectionLabel>TECHNOLOGY FOUNDATION</SectionLabel><h2>Built on a modern <em>intelligence stack.</em></h2></div><p>Designed to give research teams an adaptable foundation for retrieval, analysis, and knowledge discovery.</p></div><div className="tech-grid">{[['N', 'NeMo', 'Model development and customization for research-oriented intelligence workflows.'], ['R', 'Retriever', 'Retrieval of relevant information from available knowledge sources.'], ['NIM', 'NIM', 'Production-ready AI inference deployment and serving.'], ['R', 'RAPIDS', 'Accelerated data processing and analysis.']].map(([mark, title, text]) => <div className="tech-card" key={title}><span className="tech-mark">{mark}</span><h3>{title}</h3><p>{text}</p><ArrowUpRight size={17} /></div>)}</div></div></section>; }
+export { Tech };
