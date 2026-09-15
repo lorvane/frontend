@@ -22,3 +22,5 @@ export { Contact } from './Contact';
 export { CTA } from './CTA';
 export { DashboardShell } from './DashboardShell';
 export { MoreDots } from './MoreDots';
+export { AtlasInteractiveWorkspace } from './AtlasInteractiveWorkspace';
+export { AtlasTechStack } from './AtlasTechStack';
