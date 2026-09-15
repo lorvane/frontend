@@ -13,7 +13,7 @@ function Header({ solid = false }: { solid?: boolean }) {
     <Link to="/" className="brand"><span className="brand-mark"><span /><span /><span /></span><span>LORVANE</span></Link>
     <nav className={`main-nav ${open ? 'open' : ''}`}>
       {nav.map(item => <a key={item} href={home ? `#${item.toLowerCase()}` : `/#${item.toLowerCase()}`} onClick={() => setOpen(false)}>{item}</a>)}
-      <Link to="/product" className="nav-product" onClick={() => setOpen(false)}>Product <ArrowUpRight size={15} /></Link>
+      <Link to="/product" className="nav-product" onClick={() => setOpen(false)}>Lorvane Atlas <ArrowUpRight size={15} /></Link>
     </nav>
     <button className="menu-button" onClick={() => setOpen(!open)} aria-label="Toggle navigation">{open ? <X /> : <Menu />}</button>
   </div></header>;
